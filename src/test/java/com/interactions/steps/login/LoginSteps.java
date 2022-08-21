@@ -1,4 +1,4 @@
-package com.interactions.steps.LoginSteps;
+package com.interactions.steps.login;
 
 import com.pages.login.LoginPage;
 import io.cucumber.java.ParameterType;
@@ -6,8 +6,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.AllCoreSteps;
 import utils.MyElementUtils;
+
+import java.time.Duration;
 
 public class LoginSteps extends AllCoreSteps {
 
@@ -18,24 +21,24 @@ public class LoginSteps extends AllCoreSteps {
 		return MyElementUtils.getPageElementSelector(selectorName, loginPage);
 	}
 	
-	@Given("I am on the LoginPage, with {int} seconds")
-	public void iAmOnTheLoginPage(int seconds){
+	@When("I navigate to LoginPage")
+	public void iNavigateToLoginPage() {
 		this.getDriver().navigate().to(loginPage.getPageURL());
-		System.out.println("alive");
 	}
 	
-	@Given("I say hi")
-	public void iSayHi() {
-		System.out.println("hi");
+	@Given("I am on the LoginPage, within {int} seconds")
+	public void iAmOnTheLoginPage(int seconds){
+		withTimeoutOf(Duration.ofSeconds(seconds))
+				.waitFor(ExpectedConditions.urlContains(loginPage.getPageURL()));
 	}
-	
+
 	@When("I type {string} into LoginPage {loginPageSelector}")
-	public void iTypeIntoLoginPageEMAIL(String value , By field) {
+	public void iTypeIntoLoginPageField(String value , By field) {
 		find(field).type(value);
 	}
 	
 	@And("I click LoginPage {loginPageSelector}")
-	public void iClickLoginPageSIGN_IN_BUTTON(By button) {
+	public void iClickLoginPageButton(By button) {
 		find(button).click();
 	}
 }
