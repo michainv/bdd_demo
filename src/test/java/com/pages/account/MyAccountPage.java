@@ -5,10 +5,10 @@ import utils.CorePage;
 
 public class MyAccountPage extends CorePage {
 	
+	public static By MESSAGE = By.cssSelector("[data-bind*='messages']");
+	
 	@Override
 	public String getPageURL() {
 		return this.getEnvironmentalValueFor("account.page");
 	}
-	
-	public static By MESSAGE = By.cssSelector("[data-bind*='messages']");
 }

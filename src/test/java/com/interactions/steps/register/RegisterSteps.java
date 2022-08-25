@@ -7,12 +7,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import utils.AllCoreSteps;
+import utils.CoreSteps;
 import utils.MyElementUtils;
 
 import java.time.Duration;
 
-public class RegisterSteps extends AllCoreSteps {
+public class RegisterSteps extends CoreSteps {
 	
 	RegisterPage registerPage;
 	
@@ -28,14 +28,14 @@ public class RegisterSteps extends AllCoreSteps {
 	
 	
 	@Given("I am on the RegisterPage, within {int} seconds")
-	public void iAmOnTheLoginPage(int seconds){
+	public void iAmOnTheLoginPage(int seconds) {
 		withTimeoutOf(Duration.ofSeconds(seconds))
 				.waitFor(ExpectedConditions.urlContains(registerPage.getPageURL()));
 	}
 	
 	
 	@When("I type {string} into RegisterPage {registerPageSelector}")
-	public void iTypeIntoLoginPageField(String value , By field) {
+	public void iTypeIntoLoginPageField(String value, By field) {
 		find(field).type(value);
 	}
 	
@@ -44,5 +44,5 @@ public class RegisterSteps extends AllCoreSteps {
 		find(button).click();
 	}
 	
-
+	
 }

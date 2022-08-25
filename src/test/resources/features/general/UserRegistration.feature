@@ -7,10 +7,10 @@ Feature: All user types should be able to register when entering correct\existin
 
   Scenario Outline: What ever register the
     When I type "<firstName>" into RegisterPage FIRST_NAME
-    When I type "<lastName>" into RegisterPage LAST_NAME
-    When I type "<email>" into RegisterPage EMAIL
-    When I type "<password>" into RegisterPage PASSWORD
-    When I type "<confirm_password>" into RegisterPage CONFIRM_PASSWORD
+    And I type "<lastName>" into RegisterPage LAST_NAME
+    And I type "<email>" into RegisterPage EMAIL
+    And I type "<password>" into RegisterPage PASSWORD
+    And I type "<confirm_password>" into RegisterPage CONFIRM_PASSWORD
     And I click RegisterPage CREATE_ACCOUNT_BUTTON
     Then I am on the MyAccountPage, within 5 seconds
     And I see "<message>" in MyAccountPage MESSAGE

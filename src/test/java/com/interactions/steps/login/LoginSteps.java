@@ -7,13 +7,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import utils.AllCoreSteps;
+import utils.CoreSteps;
 import utils.MyElementUtils;
 
 import java.time.Duration;
 
-public class LoginSteps extends AllCoreSteps {
-
+public class LoginSteps extends CoreSteps {
+	
 	LoginPage loginPage;
 	
 	@ParameterType("((.*))")
@@ -27,13 +27,13 @@ public class LoginSteps extends AllCoreSteps {
 	}
 	
 	@Given("I am on the LoginPage, within {int} seconds")
-	public void iAmOnTheLoginPage(int seconds){
+	public void iAmOnTheLoginPage(int seconds) {
 		withTimeoutOf(Duration.ofSeconds(seconds))
 				.waitFor(ExpectedConditions.urlContains(loginPage.getPageURL()));
 	}
-
+	
 	@When("I type {string} into LoginPage {loginPageSelector}")
-	public void iTypeIntoLoginPageField(String value , By field) {
+	public void iTypeIntoLoginPageField(String value, By field) {
 		find(field).type(value);
 	}
 	

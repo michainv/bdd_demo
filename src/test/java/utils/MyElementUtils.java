@@ -16,4 +16,8 @@ public class MyElementUtils {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public static By findSelectorWithRegexWord(By field, String word) {
+		return By.cssSelector(String.format(field.toString(), word).split("By.*:")[1]);
+	}
 }
