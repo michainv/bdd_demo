@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import utils.CoreSteps;
+import utils.core.CoreSteps;
 import utils.MyElementUtils;
 
 import java.time.Duration;
@@ -28,10 +28,14 @@ public class MyAccountSteps extends CoreSteps {
 		this.getDriver().navigate().to(myAccountPage.getPageURL());
 	}
 	
-	@Then("I am on the MyAccountPage, within {int} seconds")
-	public void iAmOnMyAccountPage(int seconds) {
-		withTimeoutOf(Duration.ofSeconds(seconds))
-				.waitFor(ExpectedConditions.urlToBe(myAccountPage.getPageURL()));
+	@Then("I {amOrNot} on the MyAccountPage, within {int} seconds")
+	public void iAmOnMyAccountPage(boolean expected, int seconds) {
+		boolean actual;
+		try{
+			actual = withTimeoutOf(Duration.ofSeconds(seconds))
+				.waitFor(ExpectedConditions.urlToBe(myAccountPage.getPageURL()));}
+		catch(Exception e){ actual = false;}
+		assertThat(expected).isEqualTo(actual);
 	}
 	
 	

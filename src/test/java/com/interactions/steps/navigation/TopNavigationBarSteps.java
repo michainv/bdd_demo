@@ -1,4 +1,4 @@
-package com.interactions.steps.top_navigation_bar;
+package com.interactions.steps.navigation;
 
 import com.pages.top_navigation_bar.TopNavigationBar;
 import io.cucumber.java.ParameterType;
@@ -7,7 +7,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import utils.CoreSteps;
+import utils.core.CoreSteps;
 import utils.MyElementUtils;
 
 

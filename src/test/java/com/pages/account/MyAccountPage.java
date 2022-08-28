@@ -1,7 +1,7 @@
 package com.pages.account;
 
 import org.openqa.selenium.By;
-import utils.CorePage;
+import utils.core.CorePage;
 
 public class MyAccountPage extends CorePage {
 	

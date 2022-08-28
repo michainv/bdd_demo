@@ -1,7 +1,8 @@
 package runner;
 
 import io.cucumber.junit.CucumberOptions;
+import utils.core.CoreTest;
 
 @CucumberOptions(tags = "@UserLogin")
-public class LoginRunnerTest extends BaseRunnerTest {
+public class LoginRunner extends CoreTest {
 }

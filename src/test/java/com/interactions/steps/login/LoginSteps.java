@@ -4,13 +4,17 @@ import com.pages.login.LoginPage;
 import io.cucumber.java.ParameterType;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import utils.CoreSteps;
+import utils.core.CoreSteps;
 import utils.MyElementUtils;
 
 import java.time.Duration;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class LoginSteps extends CoreSteps {
 	
@@ -28,11 +32,12 @@ public class LoginSteps extends CoreSteps {
 	
 	@Given("I am on the LoginPage, within {int} seconds")
 	public void iAmOnTheLoginPage(int seconds) {
-		withTimeoutOf(Duration.ofSeconds(seconds)).waitFor(ExpectedConditions.urlContains(loginPage.getPageURL()));
+		withTimeoutOf(Duration.ofSeconds(seconds))
+				.waitFor(ExpectedConditions.urlContains(loginPage.getPageURL()));
 	}
 	
 	@When("I type {string} into LoginPage {loginPageSelector}")
-	public void iTypeIntoLoginPageField(String value, By field) {
+	public void iTypeValueIntoLoginPageField(String value, By field) {
 		find(field).type(value);
 	}
 	
@@ -40,4 +45,18 @@ public class LoginSteps extends CoreSteps {
 	public void iClickLoginPageButton(By button) {
 		find(button).click();
 	}
+	
+	@Then("I see error alert:{string} in the LoginPage")
+	public void iSeeErrorInTheLoginPage(String expectedErrorMessage) {
+		WebElementFacade error = find(LoginPage.ERROR_MESSAGE_ALERT);
+		assertThat(error.getText()).isEqualTo(expectedErrorMessage);
+	}
+	
+	@Then("I see error:{string} for {loginPageSelector} in the LoginPage")
+	public void iSeeErrorForEMAIL_FIELDInTheLoginPageWithinSeconds(String expectedErrorMessage, By field) {
+		WebElementFacade error = find(field).then("..").then(LoginPage.FIELD_ERROR);
+		assertThat(error.getText()).isEqualTo(expectedErrorMessage);
+	}
+	
+
 }

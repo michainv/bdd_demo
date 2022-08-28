@@ -17,5 +17,9 @@ Feature: All user types should be able to register when entering correct\existin
 
     @Positive
     Examples:
-      | firstName | lastName | email              | password  | confirm_password | message                                            |
-      | test1     | last1    | what456f12@123.xyz | test1234! | test1234!        | Thank you for registering with Main Website Store. |
+      | firstName | lastName | email             | password  | confirm_password | message                                            |
+      | First1    | Last1    | userTest1@123.xyz | test1234! | test1234!        | Thank you for registering with Main Website Store. |
+      | First2    | Last2    | userTest2@123.xyz | test1234! | test1234!        | Thank you for registering with Main Website Store. |
+      | First3    | Last3    | userTest3@123.xyz | test1234! | test1234!        | Thank you for registering with Main Website Store. |
+      | First4    | Last4    | userTest4@123.xyz | test1234! | test1234!        | Thank you for registering with Main Website Store. |
+      | First5    | Last5    | userTest5@123.xyz | test1234! | test1234!        | Thank you for registering with Main Website Store. |

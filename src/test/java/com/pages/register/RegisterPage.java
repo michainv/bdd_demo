@@ -1,7 +1,7 @@
 package com.pages.register;
 
 import org.openqa.selenium.By;
-import utils.CorePage;
+import utils.core.CorePage;
 
 public class RegisterPage extends CorePage {
 	

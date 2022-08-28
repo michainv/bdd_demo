@@ -4,7 +4,7 @@ import com.pages.items.ItemsListPage;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import utils.CoreSteps;
+import utils.core.CoreSteps;
 
 import java.time.Duration;
 

@@ -7,7 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import utils.CoreSteps;
+import utils.core.CoreSteps;
 import utils.MyElementUtils;
 
 import java.time.Duration;

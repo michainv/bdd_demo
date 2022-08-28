@@ -1,4 +1,4 @@
-package runner;
+package utils.core;
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
@@ -9,5 +9,5 @@ import org.junit.runner.RunWith;
 		features = "src/test/resources/features",
 		glue = {"com.interactions"}
 )
-public class BaseRunnerTest {
+public class CoreTest {
 }

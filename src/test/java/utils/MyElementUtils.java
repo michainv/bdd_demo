@@ -1,6 +1,7 @@
 package utils;
 
 import org.openqa.selenium.By;
+import utils.core.CorePage;
 
 import java.lang.reflect.Field;
 

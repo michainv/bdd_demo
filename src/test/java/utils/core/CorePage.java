@@ -1,4 +1,4 @@
-package utils;
+package utils.core;
 
 import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
 import net.serenitybdd.core.pages.PageObject;
