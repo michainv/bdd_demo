@@ -1,10 +1,10 @@
-package com.steps;
+package com.steps.sample;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class SampleSteps extends utils.CoreSteps {
+public class SampleSteps {
 	
 	@Given("I am on precondition1")
 	public void iAmOnPrecondition1(){
@@ -16,7 +16,7 @@ public class SampleSteps extends utils.CoreSteps {
 		System.out.println("Performing action1");
 	}
 	
-	@Then("I expect action1-result")
+	@Then("I expect precondition1-result")
 	public void iExpectAction1Result() {
 		System.out.println("Expecting action1-result");
 	}
@@ -26,12 +26,7 @@ public class SampleSteps extends utils.CoreSteps {
 		System.out.println("Checking precondition2");
 	}
 	
-	@When("I do action2")
-	public void iDoAction2() {
-		System.out.println("Performing action2");
-	}
-	
-	@Then("I expect action2-result")
+	@Then("I expect precondition2-result")
 	public void iExpectAction4() {
 		System.out.println("Expecting action2-result");
 	}

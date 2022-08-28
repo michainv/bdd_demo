@@ -1,6 +1,6 @@
-package runner;
+package runner.sample;
 
-import com.utils.CoreTest;
+import runner.CoreTest;
 import io.cucumber.junit.CucumberOptions;
 
 @CucumberOptions(tags = "@Sample")
