@@ -28,8 +28,7 @@ public class LoginSteps extends CoreSteps {
 	
 	@Given("I am on the LoginPage, within {int} seconds")
 	public void iAmOnTheLoginPage(int seconds) {
-		withTimeoutOf(Duration.ofSeconds(seconds))
-				.waitFor(ExpectedConditions.urlContains(loginPage.getPageURL()));
+		withTimeoutOf(Duration.ofSeconds(seconds)).waitFor(ExpectedConditions.urlContains(loginPage.getPageURL()));
 	}
 	
 	@When("I type {string} into LoginPage {loginPageSelector}")

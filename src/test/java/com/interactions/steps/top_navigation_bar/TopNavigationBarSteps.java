@@ -10,7 +10,6 @@ import org.openqa.selenium.interactions.Actions;
 import utils.CoreSteps;
 import utils.MyElementUtils;
 
-import java.util.Objects;
 
 public class TopNavigationBarSteps extends CoreSteps {
 	
@@ -22,16 +21,16 @@ public class TopNavigationBarSteps extends CoreSteps {
 	}
 	
 	@Then("I hover option {string} in TopNavigationBar {topPageSelector}")
-	public void iHoverTopNavigationBarOption(String word, By field) {
+	public WebElementFacade iHoverTopNavigationBarOption(String word, By field) {
 		Actions actions = new Actions(this.getDriver());
 		By selector = MyElementUtils.findSelectorWithRegexWord(field, word);
 		WebElementFacade element = findAll(selector).stream().filter(WebElement::isDisplayed).findFirst().orElse(null);
 		actions.moveToElement(element).perform();
+		return element;
 	}
 	
 	@Then("I click option {string} in TopNavigationBar {topPageSelector}")
 	public void iClickTopNavigationBarOption(String word, By field) {
-		By selector = MyElementUtils.findSelectorWithRegexWord(field, word);
-		Objects.requireNonNull(findAll(selector).stream().filter(WebElement::isDisplayed).findFirst().orElse(null)).click();
+		iHoverTopNavigationBarOption(word, field).click();
 	}
 }

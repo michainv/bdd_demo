@@ -14,10 +14,12 @@ Feature: All user types should be able to login when entering correct\existing i
     And I hover option "<subCategory>" in TopNavigationBar CATEGORY;
     And I click option "<itemType>" in TopNavigationBar CATEGORY;
     Then I should be in ItemsPage for "<mainCategory>","<subCategory>","<itemType>", within in 5 seconds
-    Then I click on the item with order <itemOrder> in ItemListPage
+    When I click on the item with name "<itemName>" in ItemListPage
+    Then I am on SingleItemPage for "<itemName>", within 5 seconds
+    And Product price on SingleItemPage equals to "<itemPrice>"
 
     @Positive
     Examples:
-      | email                             | password  | mainCategory | subCategory | itemType | itemOrder |
-      | michalisvlachos98+test1@gmail.com | test1234! | women        | tops        | jackets  | 12        |
+      | email                             | password  | mainCategory | subCategory | itemType | itemName             | itemPrice |
+      | michalisvlachos98+test1@gmail.com | test1234! | women        | tops        | jackets  | Stellar Solar Jacket | 75.00     |
 #      | roni_cost@example.com             | roni_cost3@example.com! |
