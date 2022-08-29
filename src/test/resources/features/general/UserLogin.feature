@@ -1,4 +1,5 @@
 @UserLogin
+@Smoke
 Feature: All user types should be able to login when entering correct\existing information
 
   Background:

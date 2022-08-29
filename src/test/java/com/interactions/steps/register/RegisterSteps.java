@@ -4,13 +4,18 @@ import com.pages.register.RegisterPage;
 import io.cucumber.java.ParameterType;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.serenitybdd.core.pages.WebElementFacade;
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import utils.core.CoreSteps;
 import utils.MyElementUtils;
+import utils.core.CoreSteps;
 
 import java.time.Duration;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class RegisterSteps extends CoreSteps {
 	
@@ -45,4 +50,15 @@ public class RegisterSteps extends CoreSteps {
 	}
 	
 	
+	@And("I see {string} in RegisterPage {registerPageSelector}")
+	public void iSeeInRegisterPageMESSAGE(String expectedError, By field) {
+		WebElementFacade error = find(field);
+		assertThat(error.getText()).isEqualTo(expectedError);
+	}
+	
+	@Then("I see error:{string} for {registerPageSelector} in the RegisterPage")
+	public void iSeeErrorForInTheRegisterPage(String expectedError, By field) {
+		WebElementFacade error = find(field).then("..").then(RegisterPage.ERROR);
+		assertThat(error.getText()).isEqualTo(expectedError);
+	}
 }
