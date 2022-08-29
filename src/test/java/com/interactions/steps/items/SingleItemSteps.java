@@ -36,12 +36,12 @@ public class SingleItemSteps extends CoreSteps {
 	}
 	
 	@Then("I select {string} : {string} in SingleItemPage")
-	public void iSelectOptionForFieldInSingleItemPage(String fieldName, String option) {
+	public void iSelectOptionForFieldInSingleItemPage(String fieldName, String value) {
 		By field = MyElementUtils.findSelectorWithRegexWord(SingleItemPage.ITEM_OPTION, fieldName);
 		WebElementFacade selection = this.find(field)
 				.thenFindAll(SingleItemPage.OPTION_LABEL)
 				.stream()
-				.filter(opt -> opt.getAttribute("aria-label").equals(option))
+				.filter(opt -> opt.getAttribute("aria-label").equals(value))
 				.findFirst()
 				.orElse(null);
 		assert selection != null;

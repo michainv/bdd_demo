@@ -51,7 +51,7 @@ public class MainCartSteps extends CoreSteps {
 	}
 	
 	@And("I should see {string} with {mainCartSelector} : {string} in MainCart")
-	public void iShouldSeeWithITEM_SIZEInMainCart(String itemName, By field, String value) {
+	public void iShouldSeeItemWithValueInMainCart(String itemName, By field, String value) {
 		WebElementFacade itemRow = iShouldSeeItemRowWitGivenItemNameInMainCart(MainCart.PRODUCT_NAME, itemName);
 		WebElementFacade val = itemRow.then(field);
 		assertThat(value).satisfiesAnyOf(
