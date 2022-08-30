@@ -10,7 +10,7 @@ public class MainCart extends CorePage {
 	public static By PRODUCT_SIZE = By.cssSelector("[class='item-options'] dd:nth-of-type(1)");
 	public static By PRODUCT_COLOR = By.cssSelector("[class='item-options'] dd:nth-of-type(2)");
 	public static By PRODUCT_PRICE = By.cssSelector("[class='cart-price']");
-	public static By PRODUCT_QUANTITY = By.cssSelector("[class='control qty']");
+	public static By PRODUCT_QUANTITY = By.cssSelector("[title='Qty']");
 	public static By PRODUCT_SUBTOTAL = By.cssSelector("[data-th='Subtotal'] [class='price']");
 	public static By REMOVE_PRODUCT_BUTTON = By.cssSelector("[class='action action-delete']");
 	
