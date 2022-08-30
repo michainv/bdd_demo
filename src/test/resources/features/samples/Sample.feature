@@ -1,4 +1,5 @@
 @Sample
+  @Regression
 Feature: This is a Sample execution feature.
 
   @Sce1

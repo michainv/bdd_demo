@@ -9,8 +9,9 @@ Feature: This is a Sample Enhanced execution feature.
 
     @Positive
     Examples:
-      | precondition    | action  | result                 |
-      | precondition1   | action1 | precondition1-result   |
-      | precondition2   | action1 | precondition2-result   |
-      | precondition1-2 | action1 | precondition1-2-result |
+      | precondition      | action  | result                   |
+      | precondition1     | action1 | precondition1-result     |
+      | precondition2     | action1 | precondition2-result     |
+      | precondition1-2   | action1 | precondition1-2-result   |
+      | precondition1-2-3 | action2 | precondition1-2-3-result |
 

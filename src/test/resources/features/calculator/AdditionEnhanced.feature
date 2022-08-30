@@ -1,10 +1,11 @@
 @CalculatorEnhanced
 Feature: Calculator should be able add numbers and produce correct results
 
+  Background:
+    Given The calculator is reset
 
   @Addition
   Scenario Outline: When I add <count> numbers then the result should be correct
-    Given The calculator is reset
     When I add numbers to the total
       | <num1> |
       | <num2> |
