@@ -26,19 +26,13 @@ public class Calculator {
 		total += number;
 	}
 	
-
+	
 	@When("I add numbers to the total")
 	public void iAddTheNumbersToTotal(DataTable table) {
-		table.asList().stream().filter(Objects::nonNull)
-				.forEach(n -> {
-			System.out.println("Adding " + n);
-			total += Float.parseFloat(n);
-		});
-	}
-	
-	@DataTableType(replaceWithEmptyString = "[blank]")
-	public String listOfStringListsType(String cell) {
-		return cell;
+		table.asList().stream()
+				.filter(Objects::nonNull)
+				.forEach(n ->
+					iAddNumberToTotal(Float.parseFloat(n)));
 	}
 	
 	@Then("The total should be {float}")

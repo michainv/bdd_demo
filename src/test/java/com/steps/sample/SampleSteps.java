@@ -17,7 +17,7 @@ public class SampleSteps {
 	}
 	
 	@Then("I expect precondition1-result")
-	public void iExpectAction1Result() {
+	public void iExpectPrecondition1Result() {
 		System.out.println("Expecting action1-result");
 	}
 	
@@ -27,7 +27,7 @@ public class SampleSteps {
 	}
 	
 	@Then("I expect precondition2-result")
-	public void iExpectAction4() {
+	public void iExpectPrecondition2Result() {
 		System.out.println("Expecting action2-result");
 	}
 }

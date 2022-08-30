@@ -1,7 +1,7 @@
 @SampleParam
 Feature: This is a Sample Enhanced execution feature.
 
-  @Sce1
+  @Sce1-2
   Scenario Outline: When <precondition> is met and User performs <action> then user sees <result>
     Given I have done precondition : <precondition>
     When I perform action : <action>
@@ -9,7 +9,8 @@ Feature: This is a Sample Enhanced execution feature.
 
     @Positive
     Examples:
-      | precondition  | action  | result               |
-      | precondition1 | action1 | precondition1-result |
-      | precondition2 | action1 | precondition2-result |
+      | precondition    | action  | result                 |
+      | precondition1   | action1 | precondition1-result   |
+      | precondition2   | action1 | precondition2-result   |
+      | precondition1-2 | action1 | precondition1-2-result |
 

@@ -13,7 +13,7 @@ Feature: Calculator should be able add numbers and produce correct results
     Examples:
       | num1 | num2 | total |
       | 5    | 6    | 11    |
-      | 9    | 91   | 100   |
+      | 0    | 0    | 0     |
       | 5.5  | 4.5  | 10    |
       | 3.3  | 1.2  | 4.5   |
       | -3   | 1    | -2    |
