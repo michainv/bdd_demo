@@ -31,8 +31,7 @@ public class Calculator {
 	public void iAddTheNumbersToTotal(DataTable table) {
 		table.asList().stream()
 				.filter(Objects::nonNull)
-				.forEach(n ->
-					iAddNumberToTotal(Float.parseFloat(n)));
+				.forEach(n -> iAddNumberToTotal(Float.parseFloat(n)));
 	}
 	
 	@Then("The total should be {float}")
