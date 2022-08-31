@@ -42,6 +42,7 @@ public class MyAccountSteps extends CoreSteps {
 	
 	@And("I see {string} in MyAccountPage {myAccountPageSelector}")
 	public void iSeeInMyAccountPageMESSAGE(String message, By field) {
+		MyElementUtils.waitForPageLoaded(this.getDriver());
 		assertThat(find(field).getText()).isEqualTo(message);
 	}
 }

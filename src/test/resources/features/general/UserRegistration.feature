@@ -14,9 +14,9 @@ Feature: Users should be able to register when entering correct information
     Then I am on the MyAccountPage, within 2 seconds
     And I see "<message>" in MyAccountPage MESSAGE
     Examples:
-      | firstName | lastName | email                | password  | confirm_password | message                                            |
-      | First1    | Last1    | userTestAB03@123.xyz | test1234! | test1234!        | Thank you for registering with Main Website Store. |
-      | First2    | Last2    | userTestAB04@123.xyz | Test1234! | Test1234!        | Thank you for registering with Main Website Store. |
+      | firstName | lastName | email                 | password  | confirm_password | message                                            |
+      | First1    | Last1    | userTestBDD01@123.xyz | test1234! | test1234!        | Thank you for registering with Main Website Store. |
+      | First2    | Last2    | userTestBDD02@123.xyz | Test1234! | Test1234!        | Thank you for registering with Main Website Store. |
 
 
   @Negative

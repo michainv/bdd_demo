@@ -4,6 +4,7 @@ import com.pages.items.ItemsListPage;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import utils.MyElementUtils;
 import utils.core.CoreSteps;
 
 import java.time.Duration;
@@ -27,6 +28,7 @@ public class ItemListSteps extends CoreSteps {
 	
 	@Then("I click on the item with name {string} in ItemListPage")
 	public void iClickOnItemWithNameInItemListPage(String itemName) {
+		MyElementUtils.waitForPageLoaded(this.getDriver());
 		Actions actions = new Actions(this.getDriver());
 		actions.moveToElement(findAll(ItemsListPage.ITEM_CARD)
 				.stream()

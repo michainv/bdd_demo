@@ -16,7 +16,7 @@ public class AddItemToCartAction extends CoreSteps {
 	
 	@Given("I add item/items to my cart")
 	public void iAddItemNameToCart(DataTable table) {
-		table.asLists().subList(1, table.height() - 1).forEach(l -> {
+		table.asLists().subList(1, table.height()).forEach(l -> {
 			navigationSteps.iNavigateToProductPageForItem(l.get(0));
 			singleItemSteps.iAmOnSingleItemPageFor(l.get(0), 5);
 			singleItemSteps.productPriceOnSingleItemPageEqualsTo(l.get(1));

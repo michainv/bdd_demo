@@ -14,7 +14,7 @@ public class CheckProductsInCartAction extends CoreSteps {
 	@Given("I can see following products added to MainCart")
 	public void iAddItemNameToCart(DataTable table) {
 		MyElementUtils.waitForPageLoaded(this.getDriver());
-		table.asLists().subList(1, table.height() - 1).forEach(l -> {
+		table.asLists().subList(1, table.height()).forEach(l -> {
 			mainCartSteps.iShouldSeeItemRowWitGivenItemNameInMainCart(MainCart.PRODUCT_NAME, l.get(0));
 			mainCartSteps.iShouldSeeItemWithValueInMainCart(l.get(0), MainCart.PRODUCT_PRICE, l.get(1));
 			mainCartSteps.iShouldSeeItemWithValueInMainCart(l.get(0), MainCart.PRODUCT_SIZE, l.get(2));

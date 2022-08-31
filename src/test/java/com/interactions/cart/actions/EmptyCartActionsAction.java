@@ -4,6 +4,7 @@ import com.interactions.cart.steps.MainCartSteps;
 import com.pages.cart.MainCart;
 import io.cucumber.java.en.Given;
 import net.serenitybdd.core.pages.WebElementFacade;
+import utils.MyElementUtils;
 import utils.core.CoreSteps;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class EmptyCartActionsAction extends CoreSteps {
 	
 	@Given("I empty every item in my MainCart")
 	public void iEmptyAllMainCartItems(){
+		MyElementUtils.waitForPageLoaded(this.getDriver());
 		mainCartSteps.iNavigateOnMainCartPage();
 		mainCartSteps.iAmOnMainCartPage(5);
 		List<WebElementFacade> allProducts = findAll(MainCart.PRODUCT_ROW);
