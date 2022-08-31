@@ -2,6 +2,7 @@ package com.interactions.items.steps;
 
 import com.pages.items.ItemsListPage;
 import io.cucumber.java.en.Then;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.MyElementUtils;
@@ -30,12 +31,12 @@ public class ItemListSteps extends CoreSteps {
 	public void iClickOnItemWithNameInItemListPage(String itemName) {
 		MyElementUtils.waitForPageLoaded(this.getDriver());
 		Actions actions = new Actions(this.getDriver());
-		actions.moveToElement(findAll(ItemsListPage.ITEM_CARD)
-				.stream()
-				.filter(e -> e.then(ItemsListPage.ITEM_NAME).containsOnlyText(itemName))
-				.findFirst().orElse(null))
-				.click()
-				.perform();
+		WebElementFacade productRow =
+				findAll(ItemsListPage.ITEM_CARD)
+						.stream()
+						.filter(e -> e.getText().contains(itemName))
+						.findFirst().orElse(null);
+		actions.moveToElement(productRow).click().perform();
 	}
 	
 }

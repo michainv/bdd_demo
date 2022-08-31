@@ -6,7 +6,7 @@ import utils.core.CorePage;
 public class ItemsListPage extends CorePage {
 	
 	public static By ITEM_CARD = By.cssSelector("li[class='item product product-item']");
-	public static By ITEM_NAME = By.cssSelector("[class='product name product-item-name']");
+	public static By ITEM_NAME = By.cssSelector("[class='product-item-link']");
 	
 	@Override
 	public String getPageURL() {
