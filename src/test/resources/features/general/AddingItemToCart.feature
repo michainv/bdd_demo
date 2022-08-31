@@ -1,5 +1,5 @@
 @Shop
-Feature: All user types should be able add products to their carts
+Feature: Users should be able add products to their carts
 
   Background:
     Given I am logged in with user "michalisvlachos98+test1@gmail.com","test1234!"

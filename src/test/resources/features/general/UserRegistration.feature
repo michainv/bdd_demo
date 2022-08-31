@@ -1,6 +1,6 @@
 @UserRegister
 @Smoke
-Feature: All user types should be able to register when entering correct information
+Feature: Users should be able to register when entering correct information
 
   Background:
     Given I am on the RegisterPage, within 5 seconds

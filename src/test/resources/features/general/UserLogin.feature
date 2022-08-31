@@ -1,6 +1,6 @@
 @UserLogin
 @Smoke
-Feature: All user types should be able to login when entering correct\existing information
+Feature: Users should be able to login when entering correct\existing information
 
   Background:
     Then I am on the LoginPage, within 5 seconds

@@ -1,5 +1,5 @@
 @Pricing
-Feature: Items should have the same prices on item list and on single Iteam page
+Feature: Items should have the same prices on item list and on single Item page
 
   Background:
     Given I am logged in with user "michalisvlachos98+test1@gmail.com","test1234!"
