@@ -15,8 +15,8 @@ Feature: Users should be able to register when entering correct information
     And I see "<message>" in MyAccountPage MESSAGE
     Examples:
       | firstName | lastName | email                 | password  | confirm_password | message                                            |
-      | First1    | Last1    | userTestBDDA1@123.xyz | test1234! | test1234!        | Thank you for registering with Main Website Store. |
-      | First2    | Last2    | userTestBDDA2@123.xyz | Test1234! | Test1234!        | Thank you for registering with Main Website Store. |
+      | First1    | Last1    | userTestBDDA3@123.xyz | test1234! | test1234!        | Thank you for registering with Main Website Store. |
+      | First2    | Last2    | userTestBDDA4g@123.xyz | Test1234! | Test1234!        | Thank you for registering with Main Website Store. |
 
 
   @Negative
